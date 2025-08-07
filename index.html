@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,12 +43,6 @@
     @keyframes fall {
       0% { transform: translateY(-50px); }
       100% { transform: translateY(100vh); }
-    }
-    
-    #live-counter {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #1b4332;
     }
     .buy-button {
       display: inline-block;
@@ -99,33 +94,20 @@
     }
   </style>
   <script>
-    async function updateCounter() {
+    async function updateMintyPrice() {
       try {
-        const response = await fetch("https://api.dexscreener.com/latest/dex/pairs/solana/<YOUR-PAIR-ID>");
-        const data = await response.json();
-        const price = data.pairs[0].priceUsd;
-        const volume = data.pairs[0].liquidity.usd;
-        document.getElementById("live-price").innerText = "$" + parseFloat(price).toFixed(4);
-        document.getElementById("live-raised").innerText = "$" + parseFloat(volume).toFixed(2);
-      } catch (error) {
-        console.error("Price update error:", error);
+        const res = await fetch("https://api.dexscreener.com/latest/dex/pairs/solana/EeJETG6UCusQxhhWiaNfQP4ck8wHuom9yQJEqX1Mpump");
+        const data = await res.json();
+        const price = parseFloat(data.pairs[0].priceUsd).toFixed(5);
+        const liquidity = parseFloat(data.pairs[0].liquidity.usd).toFixed(2);
+        document.getElementById("minty-price").innerText = `$${price}`;
+        document.getElementById("minty-liquidity").innerText = `$${liquidity}`;
+      } catch (err) {
+        console.error("Error fetching Minty price:", err);
       }
     }
-    setInterval(updateCounter, 5000);
-    window.onload = () => {
-      updateCounter();
-      createConfetti();
-    };
-
-    function createConfetti() {
-      for (let i = 0; i < 20; i++) {
-        const confetti = document.createElement("div");
-        confetti.classList.add("confetti");
-        confetti.style.left = Math.random() * 100 + "vw";
-        confetti.style.animationDelay = Math.random() * 5 + "s";
-        document.body.appendChild(confetti);
-      }
-    }
+    setInterval(updateMintyPrice, 5000);
+    window.onload = updateMintyPrice;
   </script>
 </head>
 <body>
@@ -133,12 +115,11 @@
     <img src="minty-mascot.png" alt="MINTY Mascot" class="logo">
     <h1>MINTY 🍃</h1>
     <p id="live-counter">
-      Current Price: <span id="live-price">$0.0047</span> | Total Raised: <span id="live-raised">$0.00</span>
+      🌿 MINTY Price: <span id="minty-price">$0.0000</span> | Liquidity: <span id="minty-liquidity">$0.00</span>
     </p>
-    <a href="https://pump.fun" target="_blank" class="buy-button">BUY MINTY NOW 🍃</a>
+    <a href="https://pump.fun/EeJETG6UCusQxhhWiaNfQP4ck8wHuom9yQJEqX1Mpump" target="_blank" class="buy-button">BUY MINTY NOW 🍃</a>
   </header>
 
-  
   <main>
     <section>
       <h2>🛒 How to Buy</h2>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MINTY 🍃 – The Freshest Solana Meme Coin</title>
+  <title>MINTY 🍃 | Official Meme Coin of the Forest</title>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
   <style>
     body {
@@ -21,7 +21,7 @@
       position: relative;
     }
     header img.logo {
-      width: 120px;
+      width: 220px;
       border-radius: 50%;
       margin-bottom: 1rem;
       animation: float 4s ease-in-out infinite;
@@ -43,17 +43,26 @@
       0% { transform: translateY(-50px); }
       100% { transform: translateY(100vh); }
     }
-    .mascot-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 100px;
-      z-index: 5;
-      animation: float 6s ease-in-out infinite;
-    }
+    
     #live-counter {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #1b4332;
+    }
+    .buy-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background-color: #38b000;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
       font-size: 1.2rem;
-      color: #40916c;
+      font-weight: bold;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    .buy-button:hover {
+      background-color: #2d6a4f;
     }
     main {
       max-width: 800px;
@@ -126,10 +135,10 @@
     <p id="live-counter">
       Current Price: <span id="live-price">$0.0047</span> | Total Raised: <span id="live-raised">$0.00</span>
     </p>
+    <a href="https://pump.fun" target="_blank" class="buy-button">BUY MINTY NOW 🍃</a>
   </header>
 
-  <img src="minty-mascot.png" alt="Floating Minty" class="mascot-float" />
-
+  
   <main>
     <section>
       <h2>🛒 How to Buy</h2>
@@ -151,19 +160,15 @@
     </section>
     <section>
       <h2>🌱 MINTY's Origin</h2>
-      <p>MINTY sprouted deep in a magical forest, born from the laughter of memes and a gust of fresh blockchain air. It's lighthearted, fun, and full of good vibes. No promises — just mint.</p>
+      <p>MINTY was born in the heart of a whimsical forest, blending memes, community, and good vibes into one crisp token. Designed to be lighthearted and refreshing, MINTY is powered by community engagement and viral creativity — no promises, just mint. 🍃</p>
     </section>
     <section>
       <h2>🌍 Join the Community</h2>
       <p>
         <a href="https://t.me/MINTYOfficialCommunity" target="_blank">Telegram Community</a> |
         <a href="https://t.me/MINTYAnnouncementChannel" target="_blank">Announcement Channel</a> |
-        <span>Twitter (coming soon!)</span>
+        Twitter (coming soon!)
       </p>
-    </section>
-    <section>
-      <h2>📥 Website Files</h2>
-      <p><a href="sandbox:/mnt/data/minty-website/index.html" download>Download index.html</a> and place it with your <code>minty-mascot.png</code>.</p>
     </section>
     <section>
       <h2>⚠️ Disclaimer</h2>
@@ -174,4 +179,4 @@
     <p>&copy; 2025 MINTY. No rugs, just vibes 🌱</p>
   </footer>
 </body>
-</html>update title
+</html>
